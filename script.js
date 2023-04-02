@@ -2,6 +2,7 @@ const searchBtn = document.querySelector("form");
 searchBtn.addEventListener("submit", function (e) {
   e.preventDefault();
   const searchInput = document.querySelector(".search-input");
+  console.log(searchInput.value);
   getMovies(searchInput.value);
 });
 
@@ -32,18 +33,18 @@ function getMovies(input) {
 const movie_container = document.querySelector(".movie-container");
 function showCard() {
   let myMovies = returnMovies.results;
+  console.log(myMovies);
   for (let i = 0; i < myMovies.length; i++) {
     movie_container.innerHTML += `
     <div class="card m-4" style="width: 18rem;">
-  <img src="${myMovies[i].image}" class="card-img-top img" style=""; " alt="...">
-  <div class="card-body">
-    <h5 class="card-title">${myMovies[i].title}</h5>
-    <p class="card-text">${myMovies[i].releaseDate}</p>
-    <a href="play-movie.html?src=${myMovies[i].url}" onclick="showVideo()" target="_blank"class="btn btn-primary">Play movie
-    </a>
-    
-  </div>
-</div>`;
+      <img src="${myMovies[i].image}" class="card-img-top img" style=""; " alt="...">
+    <div class="card-body">
+      <h5 class="card-title">${myMovies[i].title}</h5>
+      <p class="card-text">${myMovies[i].releaseDate}</p>
+      <a href="play-movie.html?src=${myMovies[i].url}" onclick="showVideo()" target="_blank"class="btn btn-primary">Play movie
+      </a>
+    </div>
+  </div>`;
   }
 }
 
