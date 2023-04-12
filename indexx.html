@@ -1,27 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylee.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylee.css" />
     <script defer src="/movieCard.js"></script>
     <script defer src="/main.js"></script>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="29"
+        fill="currentColor"
+        class="bi bi-film"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z"
+        />
+      </svg>
       <h1>Entertainment Hub</h1>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        fill="currentColor"
+        class="bi bi-camera-reels-fill mt-3"
+        viewBox="0 0 16 16"
+      >
+        <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+        <path d="M9 6a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+        <path
+          d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z"
+        />
+      </svg>
     </header>
     <main>
       <form action="#" method="get">
-        <input type="text" name="search" id="movieIput" placeholder="Search movie...">
+        <input
+          type="text"
+          name="search"
+          id="movieIput"
+          placeholder="Search movie..."
+        />
         <button type="submit" id="searchBtn">Search</button>
       </form>
     </main>
 
     <div class="movie-container" id="mainContainer">
-        <!-- <div class="movie-card">
+      <!-- <div class="movie-card">
           <img src="https://via.placeholder.com/300x450" alt="Movie Poster">
           <div class="movie-details">
             <h2 class="movie-title">The Great Gatsby</h2>
@@ -50,8 +81,8 @@
             <button class="movie-button">Watch Trailer</button>
           </div>
         </div> -->
-      </div>
-      
+    </div>
+
     <footer>
       <p>&copy; 2023 Entertainment Hub</p>
     </footer>
