@@ -1,8 +1,16 @@
 const createMovieCard = () => {
   const movieCard = document.createElement("div");
-  movieCard.setAttribute("class", "video-card");
+  movieCard.setAttribute("class", "movie-card");
   return movieCard;
 };
+
+const movieDetailsContainer = () =>{
+  const movieDetails = document.createElement("div");
+  movieDetails.setAttribute("class", "movie-details");
+  return movieDetails;
+}
+
+
 
 const createMoviePoster = (posterPath) => {
   const moviePosterUrl = `https://image.tmdb.org/t/p/original/${posterPath}`;
@@ -22,28 +30,52 @@ const createMovieTitle = (title) => {
   return titleHeader;
 };
 
-const createMovieOverview = (overview) => {
-  const overviewParagraph = document.createElement("p");
-  overviewParagraph.setAttribute("id", "movieOverview");
-  overviewParagraph.innerHTML = overview;
+const createReleaseDate = (date) => {
+  const releaseDate = document.createElement("p");
+  releaseDate.setAttribute("class", "movie-release");
+  releaseDate.innerHTML = "Released: " + date;
 
-  return overviewParagraph;
+  return releaseDate;
+};
+
+const createRatings = (rate) => {
+  const aveRating = document.createElement("p");
+  aveRating.setAttribute("class", "movie-rating");
+  aveRating.innerHTML = "Rating: " + rate;
+
+  return aveRating;
 };
 
 const displayMovie = (movies) => {
   console.log(movies);
   const movieContainer = document.getElementById("mainContainer");
 
+  const trailerBtn = () =>{
+    const trailerBtn = document.createElement("button");
+    trailerBtn.setAttribute("class", "movie-button");
+    trailerBtn.innerHTML = "Watch Trailer";
+    return trailerBtn;
+  }
+
   movies.forEach((movie) => {
     const movieCard = createMovieCard();
+    const detailsCont = movieDetailsContainer()
     const img = createMoviePoster(movie.poster_path);
     const title = createMovieTitle(movie.title);
-    const parag = createMovieOverview(movie.overview);
+    const release = createReleaseDate(movie.release_date);
+    const rate = createRatings(movie.vote_average);
+
+    // if(!img) return
 
     movieCard.appendChild(img);
-    movieCard.appendChild(title);
-    movieCard.appendChild(parag);
+    detailsCont.appendChild(title);
+    detailsCont.appendChild(release);
+    detailsCont.appendChild(rate);
+    detailsCont.appendChild(trailerBtn());
+    movieCard.appendChild(detailsCont);
 
     movieContainer.appendChild(movieCard);
+
+   
   });
 };
