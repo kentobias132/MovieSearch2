@@ -26,23 +26,25 @@ const getMovieBySearchArray = async () => {
   }
 };
 
-function loading() {
-  const movie = document.querySelector(".spinner");
-  movie.style.display = "flex";
-}
+// function loading() {
+//   const movie = document.querySelector(".spinner");
+//   movie.style.display = "flex";
+// }
 
-function stoploading() {
-  const movie = document.querySelector(".spinner");
-  movie.style.display = "none";
-}
+// function stoploading() {
+//   const movie = document.querySelector(".spinner");
+//   movie.style.display = "none";
+// }
 
 const resMovie = async () => {
-  clearCurrentMovie();
-  loading();
+  // clearCurrentMovie();
+  // loading();
 
   const relatedMovie = await getMovieBySearchArray();
-  stoploading();
+  // stoploading();
   displayMovie(relatedMovie);
 };
 
+
 searchBtn.onclick = resMovie;
+// searchBtn.onclick = getMovieBySearchArray;
