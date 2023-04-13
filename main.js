@@ -11,14 +11,14 @@ const getMovieBySearchArray = async () => {
   console.log(input);
   // search movie keyword endpoint
   const movieKeywordEndpoint = "/search/movie";
-  const requestParams = `?api_key=283158bd06dd1684146f37464c01d6d7&query=${input}`;
+  const requestParams = `?api_key=${tmdbKey}&query=${input}`;
   const urlToFetch = `${tmdbBaseUrl}${movieKeywordEndpoint}${requestParams}`;
   try {
     const response = await fetch(urlToFetch);
     if (response.ok) {
       const jsonResponse = await response.json();
+      console.log(jsonResponse);
       const movie = jsonResponse.results;
-      console.log(movie);
       return movie;
     }
   } catch (error) {
@@ -26,25 +26,17 @@ const getMovieBySearchArray = async () => {
   }
 };
 
-// function loading() {
-//   const movie = document.querySelector(".spinner");
-//   movie.style.display = "flex";
-// }
-
-// function stoploading() {
-//   const movie = document.querySelector(".spinner");
-//   movie.style.display = "none";
-// }
-
 const resMovie = async () => {
-  // clearCurrentMovie();
-  // loading();
-
   const relatedMovie = await getMovieBySearchArray();
-  // stoploading();
-  displayMovie(relatedMovie);
+  const movie = await displayMovie(relatedMovie);
+  return movie;
 };
 
-
 searchBtn.onclick = resMovie;
-// searchBtn.onclick = getMovieBySearchArray;
+
+// enter button event
+document.getElementById("movieIput").addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    resMovie();
+  }
+});

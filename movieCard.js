@@ -10,25 +10,25 @@ const movieDetailsContainer = () => {
   return movieDetails;
 };
 
-// const createMoviePoster = (posterPath) => {
-//   const moviePosterUrl = `https://image.tmdb.org/t/p/original/${posterPath}`;
-
-//   const posterImg = document.createElement("img");
-//   posterImg.setAttribute("src", moviePosterUrl);
-//   posterImg.setAttribute("id", "moviePoster");
-
-//   return posterImg;
-// };
 const createMoviePoster = (posterPath) => {
   const moviePosterUrl = `https://image.tmdb.org/t/p/original/${posterPath}`;
 
-  const posterImg = document.createElement("div");
-  posterImg.setAttribute("class", "movie-poster");
-  // posterImg.setAttribute("src", moviePosterUrl);
-  posterImg.style.backgroundImage = `url(${moviePosterUrl})`;
+  const posterImg = document.createElement("img");
+  posterImg.setAttribute("src", moviePosterUrl);
+  posterImg.setAttribute("id", "moviePoster");
 
   return posterImg;
 };
+// const createMoviePoster = (posterPath) => {
+//   const moviePosterUrl = `https://image.tmdb.org/t/p/original/${posterPath}`;
+
+//   const posterImg = document.createElement("div");
+//   posterImg.setAttribute("class", "movie-poster");
+//   // posterImg.setAttribute("src", moviePosterUrl);
+//   posterImg.style.backgroundImage = `url(${moviePosterUrl})`;
+
+//   return posterImg;
+// };
 
 const createMovieTitle = (title) => {
   const titleHeader = document.createElement("h2");
@@ -70,7 +70,7 @@ const createOverview = (overview) => {
   return overviews;
 };
 
-const displayMovie = (movies) => {
+const displayMovie = async (movies) => {
   console.log(movies);
   const movieContainer = document.getElementById("mainContainer");
 
@@ -89,8 +89,6 @@ const displayMovie = (movies) => {
     const overHead = createOverviewHead();
     const release = createReleaseDate(movie.release_date);
     const overview = createOverview(movie.overview);
-
-    // if(!img) return
 
     movieCard.appendChild(img);
     detailsCont.appendChild(title);

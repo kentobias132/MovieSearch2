@@ -70,7 +70,7 @@ button[type="submit"]:hover {
   flex-direction: column;
   border-radius: 5px;
   margin: 20px;
-  height: 600px;
+  /* height: 600px; */
   width: 350px;
   box-shadow: 0 0 10px black;
   background: #333;
@@ -93,13 +93,13 @@ button[type="submit"]:hover {
 }
 
 /* ******************NEW*********** */
-.movie-poster {
+/* .movie-poster {
   height: 360px;
   border-radius: 5px 5px 0 0;
 
   width: 100%;
   background-size: cover;
-}
+} */
 
 .movie-title {
   font-size: 1.6rem;
